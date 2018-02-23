@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CodingChallenge2.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CodingChallenge2.Controllers
@@ -27,7 +28,9 @@ namespace CodingChallenge2.Controllers
         [HttpGet("{id}")]
         public string Get(int id)
         {
-            return "value";
+            var letter = letters.FirstOrDefault((p) => p.Id == id);
+            
+            return letter.ToString();
         }
 
         // POST api/values
